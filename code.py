@@ -14,13 +14,16 @@ elif task == "/" :
     if num2 == 0 :
         print("bro you can't divide by zero")
     elif (num1 % num2) != 0 :
-        result_type1 = input("What kind of answer do you want?(eg. floor division , modulus):")
+        result_type1 = input("What kind of answer do you want?(eg. floor division , modulus and division):")
         if result_type1 == "floor division":
             floor_division = num1 // num2
             print("floor division : ", floor_division)
         elif result_type1 == "modulus":
             modulus = num1 % num2
             print("modulus :" , modulus)
+        elif result_type1 == "division":
+            division = num1 / num2
+            print("division:" ,division)
     else:    
         quotient = num1 / num2
         print("quotient :" ,quotient)

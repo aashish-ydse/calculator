@@ -1,15 +1,15 @@
-num1 = int(input("enter a number : " ))
-task = input("enter your task symble (eg- +,-,*,/) :")
-num2 = int(input("enter a number:"))
+num1 = int(input("enter your first number : " ))
+task = input("enter your task symbol (eg- +,-,*,/) :")
+num2 = int(input("enter your second number:"))
 if task == "+":
-    sum = num1 + num2 
-    print("here is your sum :" ,sum)
+    total = num1 + num2 
+    print("total :" ,total)
 elif task == "-":
-    diff = num1 - num2 
-    print("here is your diffrence :" ,diff)
+    difference = num1 - num2 
+    print("difference :" ,difference)
 elif task == "*":
-    multi = num1 * num2 
-    print("here is your product:", multi)
+    product = num1 * num2 
+    print("product:", product)
 elif task == "/" :
     if num2 == 0 :
         print("bro you can't divide by zero")
@@ -17,14 +17,14 @@ elif task == "/" :
         result_type1 = input("What kind of answer do you want?(eg. floor division , modulus):")
         if result_type1 == "floor division":
             floor_division = num1 // num2
-            print("here is your floor division : ", floor_division)
+            print("floor division : ", floor_division)
         elif result_type1 == "modulus":
             modulus = num1 % num2
-            print("here is your modulus :" , modulus)
+            print("modulus :" , modulus)
     else:    
-        divide = num1 / num2
-        print("here is your divide :" ,divide)
+        quotient = num1 / num2
+        print("quotient :" ,quotient)
 else :
-    print ("task is not veild")
+    print ("task is not valid")
 
 

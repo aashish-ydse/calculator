@@ -13,7 +13,7 @@ elif task == "*":
 elif task == "/" :
     if num2 == 0 :
         print("bro you can't divide by zero")
-    elif type(num1 / num2) == int:
+    elif type(num1 / num2) == float:
         floor_division = num1 // num2
         print(floor_division)
     else:    

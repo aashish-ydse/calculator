@@ -6,16 +6,21 @@ if task == "+":
     print("here is your sum :" ,sum)
 elif task == "-":
     diff = num1 - num2 
-    print("here is diffrence :" ,diff)
+    print("here is your diffrence :" ,diff)
 elif task == "*":
     multi = num1 * num2 
-    print("here is product:", multi)
+    print("here is your product:", multi)
 elif task == "/" :
     if num2 == 0 :
         print("bro you can't divide by zero")
     elif type(num1 / num2) == float:
-        floor_division = num1 // num2
-        print(floor_division)
+        result_type1 = input("What kind of answer do you want?(eg. floor division , modulus):")
+        if result_type1 == "floor division":
+            floor_division = num1 // num2
+            print("here is your floor division ", floor_division)
+        elif result_type1 == "modulus":
+            modulus = num1 % num2
+            print("here is your modulus :" , modulus)
     else:    
         divide = num1 / num2
         print("here is your divide :" ,divide)

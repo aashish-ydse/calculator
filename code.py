@@ -1,8 +1,9 @@
 num1 = int(input("enter your first number :"))
 task = input("enter your task symbol (eg- +,-,*,/,power(**),square root(sqrt)):")
-if task=="sqrt" or task=="square root" or task == "square root(sqrt)":
+if task=="sqrt" or task=="square root" or task=="square root(sqrt)":
     square_root=num1**(.5)
-    print("square root:" , square_root)
+    print("square root:",square_root)
+    exit()
 else:    
     num2=int(input("enter your second number:"))
 if task=="+":
@@ -36,5 +37,3 @@ elif task=="**" or task=="power" or task=="power(**)":
     print(num1,"to the power of",num2,"is",power)
 else :
     print ("anthor task is not valid")
-
-

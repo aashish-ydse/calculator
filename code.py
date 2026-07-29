@@ -31,9 +31,9 @@ if option == "normal calculator":
             elif result_type1=="division":
                 division=num1/num2
                 print("division:",division)
-            else:    
-                quotient=num1/num2
-                print("quotient:",quotient)
+        else:    
+            quotient=num1/num2
+            print("quotient:",quotient)
     elif task=="**" or task=="power" or task=="power(**)":
         power=num1**num2
         print(num1,"to the power of",num2,"is",power)
@@ -102,4 +102,3 @@ elif option == "trigonomatric calculator":
         print("undefined")
     else :
         print("sorry i'm not capable for this calculation.")
-        

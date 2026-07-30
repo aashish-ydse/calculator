@@ -1,4 +1,4 @@
-option = input("what are you want? (option - normal calculator , trigonomatric calculator) :")
+option = input("what are you want? (option - normal calculator , trigonomatric calculator,logarithm calculator) :")
 if option == "normal calculator":
     num1 = int(input("enter your first number :"))
     task = input("enter your task symbol (eg- +,-,*,/,power(**),square root(sqrt)):")
@@ -102,3 +102,10 @@ elif option == "trigonomatric calculator":
         print("undefined")
     else :
         print("sorry i'm not capable for this calculation.")
+elif option == "logarithm calculator":
+    import math
+    base = int(input("enter base:"))
+    num = int(input("enter num :"))
+    y = math.log(num , base)
+    print(y)
+

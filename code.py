@@ -12,7 +12,7 @@ if option == "normal calculator":
         def divide(self, other):
             if other.value == 0:
                 return print("Error: Division by zero")
-            elif other.value % self.value != 0:
+            elif self.value % other.value != 0:
                 result_type1 = input("What kind of answer do you want?(eg. floor division , modulus and division):")
                 if result_type1 == "floor division":
                     print("Floor Division:", self.value // other.value)
@@ -25,7 +25,10 @@ if option == "normal calculator":
     s1 = Number(int(input("enter a number: ")))
     symbol = input("Enter the operation you want to perform (+, -, *, /,**,sqrt): ")
     if symbol == "sqrt":
-        print("Square root:", s1.value ** 0.5)
+        if s1.value < 0:
+            print("Square root of negative number is not supported")
+        else:
+            print("Square root:", s1.value ** 0.5)
         exit()
     s2 = Number(int(input("enter a number: ")))
     if symbol == "+":
@@ -35,78 +38,30 @@ if option == "normal calculator":
     elif symbol == "*":
         print("Multiplication:", s1.multiply(s2))
     elif symbol == "/":
-        print(s1.divide(s2))
+        result = s1.divide(s2)
+        if result is not None:
+            print("Division:", result)
     elif symbol == "**":
         print("Exponentiation:", s1.value ** s2.value)
-    elif symbol == "sqrt":
-        print("Square root:", s1.value ** 0.5)
-
 elif option=="trigonomatric calculator":
-
-    trig_id=str(input("enter your trigonometric identity(eg. sin,cos,ten,cot,sec,cosec):" ))
-    angle=str(input("enter angle(eg. 0,30,45,60,90):"))
-    if trig_id=="sin" and angle=="0" :
-        print("0")
-    elif trig_id == "sin" and angle=="30" :
-        print("0.5")
-    elif trig_id=="sin" and angle=="45" :
-        print("0.70710")
-    elif trig_id=="sin" and angle=="60" :
-        print("0.86602")
-    elif trig_id=="sin" and angle=="90" :
-        print("1")
-    elif trig_id=="cos" and angle=="90" :
-        print("0")
-    elif trig_id=="cos" and angle=="60" :
-        print("0.5")
-    elif trig_id=="cos" and angle=="45" :
-        print("0.70710")
-    elif trig_id=="cos" and angle=="30" :
-        print("0.86602")
-    elif trig_id=="cos" and angle=="0" :
-        print("1")
-    elif trig_id=="tan" and angle=="0" :
-        print("0")
-    elif trig_id=="tan" and angle=="30" :
-        print("0.57735")
-    elif trig_id=="tan" and angle=="45" :
-        print("1")
-    elif trig_id=="tan" and angle=="60" :
-        print("1.73205")
-    elif trig_id=="tan" and angle=="90" :
-        print("undefined")
-    elif trig_id=="cot" and angle=="90" :
-        print("0")
-    elif trig_id=="cot" and angle=="60" :
-        print("0.57735")
-    elif trig_id=="cot" and angle=="45" :
-        print("1")
-    elif trig_id=="cot" and angle=="30" :
-        print("1.73205")
-    elif trig_id=="cot" and angle=="0" :
-        print("undefined")
-    elif trig_id=="sec" and angle=="0" :
-        print("1")
-    elif trig_id=="sec" and angle=="30" :
-        print("1.15470")
-    elif trig_id=="sec" and angle=="45" :
-        print("1.41421")
-    elif trig_id=="sec" and angle=="60" :
-        print("2")
-    elif trig_id=="sec" and angle=="90" :
-        print("undefined")
-    elif trig_id=="cosec" and angle=="90" :
-     print("1")
-    elif trig_id=="cosec" and angle=="60" :
-        print("1.15470")
-    elif trig_id=="cosec" and angle=="45" :
-        print("1.41421")
-    elif trig_id=="cosec" and angle=="30" :
-        print("2")
-    elif trig_id=="cosec" and angle=="0" :
-        print("undefined")
+    import math 
+    trig_id=str(input("enter your trigonometric identity(eg. sin,cos,tan,cot,sec,cosec):" ))
+    angle=float(input("enter angle:"))
+    rad = math.radians(float(angle))
+    if trig_id=="sin":
+        print("sin(",angle,")=",math.sin(rad))
+    elif trig_id=="cos":
+        print("cos(",angle,")=",math.cos(rad))
+    elif trig_id=="tan":
+        print("tan(",angle,")=",math.tan(rad))
+    elif trig_id=="cot":
+        print("cot(",angle,")=",1/math.tan(rad))
+    elif trig_id=="sec":
+        print("sec(",angle,")=",1/math.cos(rad))
+    elif trig_id=="cosec":
+        print("cosec(",angle,")=",1/math.sin(rad))
     else:
-        print("sorry i'm not capable for this calculation.")
+        print("invalid input")
 elif option=="logarithm calculator":
     import math
     base=int(input("enter base:"))
@@ -117,7 +72,7 @@ elif option=="geometry calculator":
     pi=3.14159
     dimension=input("enter your shape dimension (option - 2D and 3D) :")
     if dimension=="2D":
-        calculation_type=input("what do you want to calculate (option - area or parimeter :")
+        calculation_type=input("what do you want to calculate (option - area or perimeter):")
         if calculation_type=="area":
             shape=input("enter your shape name (option - 1.Square ,2.Rectangle , 3.Circle, 4.Triangle, 5.Parallelogram, 6.Rhombus, 7.Kite, 8.Trapezium, 9.Ellipse, 10.Semicircle, 11.Sector, 12.Annulus) :" )
             if shape=="square":
@@ -158,9 +113,9 @@ elif option=="geometry calculator":
                 area_kite=multi_d1d2/2
                 print(area_kite)
             elif shape=="Trapezium":
-                side=int(input("enter side of Trapezium :"))
-                base_tra=int(input("enter base of Trapezium :"))
-                hight_tra=int(input("enter hight of Trapezium :"))
+                side=int(input("enter side of Trapezium:"))
+                base_tra=int(input("enter base of Trapezium:"))
+                hight_tra=int(input("enter hight of Trapezium:"))
                 sum_side_base=side + base_tra
                 half_hight=hight_tra/2
                 area_Trapezium=sum_side_base*half_hight 
@@ -255,7 +210,7 @@ elif option=="geometry calculator":
                 perimeter_sector=(multi_pai_rad * angle_div)+radius_2
                 print(perimeter_sector)
             elif shape=="annulus":
-                r1=(input("enter inner radius :"))
+                r1=int(input("enter inner radius :"))
                 r2=int(input("enter outer radius :"))
                 r2_r1=r2 + r1 
                 pai=3.1415

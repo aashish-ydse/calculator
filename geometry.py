@@ -1,4 +1,4 @@
-elif option=="geometry calculator":
+def run():
     pi=3.14159
     dimension=input("enter your shape dimension (option - 2D and 3D) :")
     if dimension=="2D":

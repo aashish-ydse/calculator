@@ -1,4 +1,5 @@
 import math 
+def run():
     trig_id=str(input("enter your trigonometric identity(eg. sin,cos,tan,cot,sec,cosec):" ))
     angle=float(input("enter angle:"))
     rad = math.radians(float(angle))

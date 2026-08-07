@@ -1,12 +1,17 @@
-class Number :
+def run():
+    class Number:
         def __init__(self, value):
             self.value = value
+
         def add(self, other):
             return self.value + other.value
+
         def subtract(self, other):
             return self.value - other.value
+
         def multiply(self, other):
             return self.value * other.value
+
         def divide(self, other):
             if other.value == 0:
                 return print("Error: Division by zero")
@@ -20,13 +25,14 @@ class Number :
                     print("Division:", self.value / other.value)
             else:
                 return self.value / other.value
+
     s1 = Number(int(input("enter a number: ")))
     symbol = input("Enter the operation you want to perform (+, -, *, /,**,sqrt): ")
     if symbol == "sqrt":
         if s1.value < 0:
             print("Square root of negative number is not supported")
-        else:
-            print("Square root:", s1.value ** 0.5)
+    else:
+        print("Square root:", s1.value ** 0.5)
         exit()
     s2 = Number(int(input("enter a number: ")))
     if symbol == "+":
